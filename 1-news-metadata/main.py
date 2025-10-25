@@ -1,3 +1,4 @@
+import asyncio
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -9,8 +10,13 @@ additionally, the model is designed to be more efficient and scalable than its p
 """
 
 state_input = {"text": sample_text}
-result = app.invoke(state_input)
+result = asyncio.run(app.ainvoke(state_input))
 
 print("Classification:", result["classification"])
 print("\nEntities:", result["entities"])
 print("\nSummary:", result["summary"])
+print("\n", type(result), result)
+
+app.get_graph().draw_mermaid_png(
+    output_file_path="1-news-metadata/compiled_graph.png"
+)
