@@ -1,11 +1,11 @@
 import os
 from typing import TypedDict, List
 from langgraph.graph import StateGraph, END
-from langchain_classic.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
-from langchain.schema import HumanMessage
+from langchain_core.messages import HumanMessage
 
-from .schema import State
+from schema import State
 
 llm = ChatOpenAI(model="gpt-4o-mini",temperature=0)
 
