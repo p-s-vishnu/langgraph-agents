@@ -1,0 +1,6 @@
+langgraph==1.0.1
+langchain==1.0.2
+langchain-openai==1.0.1
+langchain-google-genai==3.0.0
+fastenv==0.6.0
+aiofiles==25.1.0
