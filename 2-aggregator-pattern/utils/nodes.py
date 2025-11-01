@@ -231,7 +231,7 @@ async def aggregate_answers(state: State) -> Dict[str, Any]:
         "story": state.story,
         "poem": state.poem,
     }
-    # Remove any None values
+
     combined = {k: v for k, v in combined.items() if v is not None}
     # Save to markdown file
     async with aiofiles.open("2-aggregator-pattern/output.md", "w") as f:
